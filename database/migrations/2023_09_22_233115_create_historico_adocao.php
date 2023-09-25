@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('historico_adocao', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_historico_adocao');
+            $table->varchar('tipo_historico_adocao',45);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

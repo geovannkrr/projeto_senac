@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('porte', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_porte');
+            $table->varchar('tipo_porte',45);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

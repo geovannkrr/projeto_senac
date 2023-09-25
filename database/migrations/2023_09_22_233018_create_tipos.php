@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tipos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_tipos');
+            $table->varchar('tipo',45);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
