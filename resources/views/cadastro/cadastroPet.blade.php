@@ -21,11 +21,14 @@
 
             <form class="form" action="#" method="post">
                 
+                {{-- Nome do Pet --}}
                 <div class="form_cadastro">
                     <label for="nome" class="form_label">Nome do Pet</label>
                     <input type="text" name="nome" class="form_input" id="nome" placeholder="Digite o nome do Pet" required>
                 </div> <br>
+                {{-- Nome do Pet --}}
 
+                {{-- Tipo do Pet --}}
                 <div class="form_cadastro">
                     <label for="tipo_pet" class="text">Tipo do Pet</label>
                     <select name="tipo_pet" class="dropdown" required>
@@ -36,7 +39,9 @@
                         <option value="Repteis" class="form_select_option">Repteis</option>                    
                     </select>
                 </div><br>
+                {{-- Tipo do Pet --}}
 
+                {{-- Sexo do Pet --}}
                 <div class="form_cadastro">
                     <label for="sexo_pet" class="text">Sexo do Pet</label>
                     <select name="sexo" class="dropdown" required>
@@ -45,7 +50,9 @@
                         <option value="Femea" class="form_select_option">Femea </option>
                     </select>
                 </div><br>
+                {{-- Sexo do Pet --}}
 
+                {{-- Cor do Pet --}}
                 <div class="form_cadastro">
                     <label for="cor_pet" class="text">Cor do Pet</label>
                     <select name="cor_pet" class="dropdown" required>
@@ -63,7 +70,9 @@
                         <option value="Preto" class="form_select_option">Preto</option>                    
                     </select>
                 </div><br>
+                {{-- Cor do Pet --}}
 
+                {{-- Castração Pet --}}
                 <div class="form_cadastro">
                     <label for="sexo_pet" class="text">O Pet é Castrado?</label>
                     <select name="sexo" class="dropdown" required>
@@ -72,12 +81,16 @@
                         <option value="nao" class="form_select_option">Não </option>
                     </select>
                 </div><br>
-                
+                {{-- Castração Pet --}}
+
+                {{-- Data de Nascimento --}}
                 <div class="form_cadastro">
                     <label for="data_nascimento" class="form_label">Data de Nascimento</label>
                     <input type="date" name="data_nascimento" class="form_input" id="data_nascimento" placeholder="Data de Nascimento" required>
                 </div> <br>
+                {{-- Data de Nascimento --}}
 
+                {{-- Situação do Pet --}}
                 <div class="form_cadastro">
                     <label for="situacao" class="text">Situação</label>
                     <select name="sexo" class="dropdown" required>
@@ -86,7 +99,9 @@
                         <option value="Inapto" class="form_select_option">Inapto para Adoção </option>
                     </select>
                 </div><br>
-
+                {{-- Situação do Pet --}}
+                
+                {{-- Observações --}}
                 <div class="form_cadastro">
                     <label for="data_nascimento" class="form_label">Observações</label>
                     <textarea name="descricao" id="" cols="50" rows="5"></textarea>
