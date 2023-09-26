@@ -22,7 +22,7 @@
             <form class="form" action="#" method="post">
                 
                 <div class="form_cadastro">
-                    <label for="nome" class="form_label">Nome do Pet</label>
+                    <label for="nome" class="text">Nome do Pet</label>
                     <input type="text" name="nome" class="form_input" id="nome" placeholder="Digite o nome do Pet" required>
                 </div> <br>
 
@@ -34,15 +34,6 @@
                         <option value="Gato" class="form_select_option">Gato </option>
                         <option value="Aves" class="form_select_option">Aves</option>                    
                         <option value="Repteis" class="form_select_option">Repteis</option>                    
-                    </select>
-                </div><br>
-
-                <div class="form_cadastro">
-                    <label for="sexo_pet" class="text">Sexo do Pet</label>
-                    <select name="sexo" class="dropdown" required>
-                        <option selected disabled class="form_select_option" value="">Selecione o Sexo do Pet</option>
-                        <option value="Macho" class="form_select_option">Macho</option>
-                        <option value="Femea" class="form_select_option">Femea </option>
                     </select>
                 </div><br>
 
@@ -65,22 +56,70 @@
                 </div><br>
 
                 <div class="form_cadastro">
-                    <label for="sexo_pet" class="text">O Pet é Castrado?</label>
-                    <select name="sexo" class="dropdown" required>
+                    <label for="castracao" class="text">O Pet é Castrado?</label>
+                    <select name="castracao" class="dropdown" required>
                         <option selected disabled class="form_select_option" value="">Selecione</option>
                         <option value="sim" class="form_select_option">Sim</option>
                         <option value="nao" class="form_select_option">Não </option>
                     </select>
                 </div><br>
+
+                <div class="form_cadastro">
+                    <label for="vacinacao" class="text">Vacinações do Pet</label>
+                    <div class="formulario">
+                        <label for="vacinacao" class="label">Raiva</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="raiva">
+
+                        <label for="vacinacao" class="label">V8</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="v8">
+
+                        <label for="vacinacao" class="label">V10</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="v10">
+
+                        <label for="vacinacao" class="label">Antirrábica</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="antirrábica">
+
+                        <label for="vacinacao" class="label">Gripe Canina</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="gripe_canina">
+
+                        <label for="vacinacao" class="label">Giárdia</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="giárdia">
+
+                        <label for="vacinacao" class="label">Leishmaniose</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="leishmaniose">
+
+                        <label for="vacinacao" class="label">V3 - Gatos</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="v3">
+
+                        <label for="vacinacao" class="label">V4 - Gatos</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="v4">
+
+                        <label for="vacinacao" class="label">V5 - Gatos</label>
+                        <input type="checkbox" name="vacinacao[]" id="" value="v5">
+                        
+                    </div>
+                </div><br>
+
+
+                <div class="radio">
+                    <div class="formulario">
+                    <label for="sexo" class="text">Sexo do Pet</label><br>
+                    <label for="femea" class="radio_label"> <span class="radio_novo_btn"></span> Femea</label>
+                    <input type="radio" class="form_new_input" id="femea" name="sexo" value="femea" required="required">
+                    <label for="macho" class="radio_label"> <span class="radio_novo_btn"></span> Macho</label>
+                    <input type="radio" class="form_new_input" id="macho" name="sexo" value="macho" required="required">
+                    </div>
+                    
+                </div><br>
                 
                 <div class="form_cadastro">
-                    <label for="data_nascimento" class="form_label">Data de Nascimento</label>
+                    <label for="data_nascimento" class="text">Data de Nascimento</label>
                     <input type="date" name="data_nascimento" class="form_input" id="data_nascimento" placeholder="Data de Nascimento" required>
                 </div> <br>
 
                 <div class="form_cadastro">
                     <label for="situacao" class="text">Situação</label>
-                    <select name="sexo" class="dropdown" required>
+                    <select name="situacao" class="dropdown" required>
                         <option selected disabled class="form_select_option" value="">Qual a Situação do Pet?</option>
                         <option value="Apto" class="form_select_option">Apto para Adoção</option>
                         <option value="Inapto" class="form_select_option">Inapto para Adoção </option>
@@ -88,20 +127,20 @@
                 </div><br>
 
                 <div class="form_cadastro">
-                    <label for="data_nascimento" class="form_label">Observações</label>
+                    <label for="data_nascimento" class="text">Observações</label>
                     <textarea name="descricao" id="" cols="50" rows="5"></textarea>
                 </div><br>
 
                     <div class="submit">
                       <input type="hidden" name="acao" value="enviar">
                       <button type="submit" name="Submit" class="btn" >Enviar Cadastro</button>
-                    </div><br>
+                    </div><br><br>
             </form>
         </div>
     </body>
 
     <style>
-        .container{
+         .container{
             width: 750px;
             background:#ffffff; 
             border-radius:15px; 
@@ -109,6 +148,7 @@
             top: 2%;
             left: 30%;
         }
+
         .container h1 {
             font-size: 2.3em;
             text-align: center;
@@ -118,19 +158,14 @@
             margin-bottom: 10px;
             padding-bottom: 10px;
         }
-        .form_cadastro {
-            width: 90%;
-            margin: 0 auto;
-            margin-bottom: 30px;
-            position: relative;
-        }
-              
+
         .form_cadastro {
             width: 100%;
             margin-bottom: 20px;
             position: relative;
         }
-        input{
+
+        .form_input{
             font-size: 16px;
             font-family: inherit;
             padding: 8px 15px;
@@ -141,6 +176,12 @@
             width: 100%;
             border: solid black 1px;
             border-radius: 5px;
+        }
+
+        .text{
+           font-weight: bolder;
+           margin-bottom: 5px;
+           margin-left: 5px;
         }
 
         .dropdown{
@@ -155,7 +196,7 @@
             border: solid black 1px;
             border-radius: 5px;
         }
-        
+
         textarea{
             font-size: 16px;
             font-family: inherit;
@@ -167,12 +208,6 @@
             width: 100%;
             border: solid black 1px;
             border-radius: 5px;
-        }
-
-        label{
-           font-weight: bolder;
-           margin-bottom: 5px;
-           margin-left: 5px;
         }
 
         .btn{
@@ -194,6 +229,17 @@
             font-weight: bolder;
         }
 
+        .formulario{
+            background-color: #ffffff;
+            border: solid black 1px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 50%;
+        }
+        
+        .label{
+            margin-left: 10px;
+        }
     </style>
 
 </html>
