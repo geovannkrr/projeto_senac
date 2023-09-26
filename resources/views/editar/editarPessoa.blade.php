@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>CADASTRAR PESSOA</title>
+        <title>EDITAR PESSOA</title>
 
          <!-- LINKS -->
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -17,9 +17,9 @@
         
         <div class="container">
             
-            <h1>Edite as Informações do Cliente</h1><br>
+            <h1>Edite as Informações Necessarias</h1><br>
 
-            <form class="form" action="#" method="post">
+            <form class="form" action="#" method="get">
                 
                 <div class="form_cadastro">
                     <label for="nome" class="form_label">Nome</label>
