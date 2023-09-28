@@ -39,3 +39,6 @@ class cliente extends Model
     }
 
 }
+
+
+

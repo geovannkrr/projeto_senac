@@ -22,7 +22,6 @@ class cliente extends Model
         'qtde_animais',
         'tipo_animal',
         'raca_animal',
-
     ];
 
     /**
@@ -36,9 +35,12 @@ class cliente extends Model
         return $this->belongsTo(
             Cliente::class,
             'id_cliente',
-            'id_cliente'
+             'id_cliente'
         );
 
     }
 
 }
+
+
+
