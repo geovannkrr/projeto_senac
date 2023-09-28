@@ -17,7 +17,12 @@ class AnimalFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => fake()->numberBetween(1,10),
+            'tipo' => fake()->numberBetween(1,5),
+            'id_centro_custo' => fake()->numberBetween(1,3),
+            'valor' => fake()->numberBetween(1,13456),
+            'vencimento' => fake()->dateTimeBetween(now(),'+30 week'),
+            'descricao' => fake()->word()
         ];
     }
 }
