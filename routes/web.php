@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\{
     CadastroController,
-    AnimalController,
-    ClienteController
+    EditController,
+    ExibirController,
+    ExcluirController
 
     };
 
