@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Animal;
+use App\Models\{
+    Animal,
+    cliente,
+    Adocao,
+};
+
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -12,7 +17,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+       $animal = Animal::orderBy('id_animal')->paginate(15);
+       return view('cadastro.indexCadastro')->with(compact('animal'));
     }
 
     /**
@@ -20,7 +26,8 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        $naimalCreate = null;
+        return view('cadastro.cadastroPet')->with(compact('animal'));
     }
 
     /**
