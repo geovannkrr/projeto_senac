@@ -24,8 +24,8 @@ use App\Http\Controllers\{
               ->name('home');
     // ROUTE TELA INICIAL
 
-    // ROUTE CADASTRO
-        Route::prefix('cadastro')
+    // ROUTE CADASTRO-PET
+        Route::prefix('cadastro-Pet')
         ->controller(CadastroController::class)
         ->middleware('auth')
         ->group(function () {
@@ -33,6 +33,78 @@ use App\Http\Controllers\{
             // GET
                 Route::get('/', 'index')->name('indexCadastro');
                 Route::get('/novoPet', 'create')->name('cadastroPet');
+            // GET
+
+            // POST
+                Route::post('cadastrar', 'store')
+                ->name('cadastro.store');
+            // POST
+        });
+            //ROUTE EDIT-PET
+            Route::prefix('edit-Pet')
+            ->controller(EditController::class)
+            ->middleware('auth')
+            ->group(function () {
+
+            // GET
+                Route::get('/', 'index')->name('indexEditar');
+                Route::get('/editPet', 'edit')->name('editarPet');
+            // GET
+
+            // POST
+            Route::post('atualizar/{id}', 'update')
+            ->name('edit.update');
+            // POST
+
+        });
+            //ROUTE EDIT-PET
+
+            //ROUTE EXIBIR-PET
+            Route::prefix('exibir-Pet')
+            ->controller(ExibirController::class)
+            ->middleware('auth')
+            ->group(function () {
+
+            // GET
+                Route::get('/', 'index')->name('indexVisualizar');
+                Route::get('/exibirPet', 'edit')->name('visualizarPet');
+            // GET
+
+            // POST
+               Route::post('exibir', 'store')
+               ->name('exibir.store');
+            // POST
+
+        });
+            //ROUTE EXIBIR-PET
+
+            //ROUTE EXCLUIR-PET
+            Route::prefix('excluir-Pet')
+            ->controller(ExcluirController::class)
+            ->middleware('auth')
+            ->group(function () {
+
+            // GET
+                Route::get('/', 'index')->name('indexExcluir');
+                Route::get('/excluirPet', 'edit')->name('excluirPet');
+            // GET
+
+            // POST
+               Route::post('excluir/{id}', 'destroy')
+               ->name('excluir.destroy');
+            // POST
+
+        });
+            //ROUTE EXCLUIR-PET
+
+            // ROUTE CADASTRO-PESSOA
+        Route::prefix('cadastro-pessoa')
+        ->controller(CadastroController::class)
+        ->middleware('auth')
+        ->group(function () {
+
+            // GET
+                Route::get('/', 'index')->name('indexCadastro');
                 Route::get('/novoPessoa', 'create')->name('cadastroPessoa');
             // GET
 
@@ -40,66 +112,75 @@ use App\Http\Controllers\{
                 Route::post('cadastrar', 'store')
                 ->name('cadastro.store');
             // POST
-
         });
-        // ROUTE CADASTRO
+            //ROUTE CADASTRO PESSOA
 
-        // ROUTE EDIT
-        Route::prefix('edit')
-        ->controller(EditController::class)
-        ->middleware('auth')
-        ->group(function () {
+            //ROUTE EDIT-PESSOA
+            Route::prefix('edit-Pessoa')
+            ->controller(EditController::class)
+            ->middleware('auth')
+            ->group(function () {
 
             // GET
                 Route::get('/', 'index')->name('indexEditar');
-                Route::get('/editarPet', 'edit')->name('editarPet');
-                Route::get('/editarPessoa', 'edit')->name('editarPessoa');
+                Route::get('/editPessoa', 'edit')->name('editarPessoa');
             // GET
 
             // POST
-               Route::post('atualizar/{id}', 'update')
-               ->name('edit.update');
+            Route::post('atualizar/{id}', 'update')
+            ->name('edit.update');
             // POST
-        });
-        // ROUTE EDIT
 
-        // ROUTE EXIBIR
-        Route::prefix('exibir')
-        ->controller(ExibirController::class)
-        ->middleware('auth')
-        ->group(function () {
+        });
+            //ROUTE EDIT-PESSOA
+
+            //ROUTE EXIBIR-PESSOA
+            Route::prefix('exibir-Pessoa')
+            ->controller(ExibirController::class)
+            ->middleware('auth')
+            ->group(function () {
 
             // GET
                 Route::get('/', 'index')->name('indexVisualizar');
-                Route::get('/exibirPet', 'create')->name('visualizarPet');
-                Route::get('/exibirPessoa', 'create')->name('visualizarPessoa');
+                Route::get('/exibirPessoa', 'edit')->name('visualizarPessoa');
             // GET
 
             // POST
-            Route::post('exibir', 'store')
-                 ->name('exibir.store');
+               Route::post('exibir', 'store')
+               ->name('exibir.store');
             // POST
-        });
-        // ROUTE EXIBIR
 
-        // ROUTE EXCLUIR
-        Route::prefix('excluir')
-        ->controller(ExcluirController::class)
-        ->middleware('auth')
-        ->group(function () {
+        });
+            //ROUTE EXIBIR-PESSOA
+
+            //ROUTE EXCLUIR-PESSOA
+            Route::prefix('excluir-Pessoa')
+            ->controller(ExcluirController::class)
+            ->middleware('auth')
+            ->group(function () {
 
             // GET
                 Route::get('/', 'index')->name('indexExcluir');
-                Route::get('/excluirPet', 'destroy')->name('excluirPet');
-                Route::get('/excluirPessoa', 'destroy')->name('excluirPessoa');
+                Route::get('/excluirPessoa', 'edit')->name('excluirPessoa');
             // GET
 
             // POST
-            Route::post('excluir/{id}', 'destroy')
-            ->name('excluir.destroy');
+               Route::post('excluir/{id}', 'destroy')
+               ->name('excluir.destroy');
             // POST
+
         });
-           // ROUTE EXCLUIR
+            //ROUTE EXCLUIR-PESSOA
+
+
+
+
+
+
+
+
+
+
 
 
 
