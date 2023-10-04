@@ -7,9 +7,7 @@ use App\Models\{
     cliente,
     Adocao,
 };
-
 use Illuminate\Http\Request;
-
 class AnimalController extends Controller
 {
     /**
@@ -17,7 +15,7 @@ class AnimalController extends Controller
      */
     public function index()
     {
-       $animal = Animal::orderBy('id_animal')->paginate(15);
+       $animal = Animal::orderBy('id_animal')->paginate(10);
        return view('cadastro.indexCadastro')->with(compact('animal'));
     }
 
@@ -26,47 +24,59 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        $naimalCreate = null;
+        $animal = null;
         return view('cadastro.cadastroPet')->with(compact('animal'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        Animal::create($request->all());
+        return redirect()
+            ->route('cadastro.cadastroPet')
+            ->with('novo', 'Pet cadastrado com sucesso!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(int $id)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(int $id)
     {
-        //
+        $animal = Animal::find($id);
+        return view('editar.editarPet')
+            ->with(compact('animal'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(Request $request, int $id)
     {
-        //
+        $animal = Animal::find($id);
+        $animal->update($request->all());
+        return redirect()
+            ->route('cadastro.indexCadastro')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(int $id)
     {
-        //
+        Animal::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }
