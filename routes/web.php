@@ -32,10 +32,10 @@ use App\Http\Controllers\{
             return redirect()->route('indexCadastro');
             })->middleware(['auth', 'verified'])
             ->name('cadastro');
-    // ROUTE TELA CADASTRO  
+    // ROUTE TELA CADASTRO
 
     // ROUTE CADASTRAR PET
-        Route::prefix('centro-custo')
+        Route::prefix('animal')
         ->controller(AnimalController::class)
         ->middleware('auth')
         ->group(function(){
@@ -47,11 +47,11 @@ use App\Http\Controllers\{
             Route::post('cadastrar','store')->name('animal.store');
             Route::post('atualizar/{id}','update')->name('animal.update');
             Route::post('excluir/{id}','destroy')->name('animal.destroy');
-        });    
+        });
     // ROUTE CADASTRAR PET
 
-    // ROUTE CADASTRAR PESOSOA
-      Route::prefix('centro-custo')
+    // ROUTE CADASTRAR PESSOA
+      Route::prefix('cliente')
       ->controller(ClienteController::class)
       ->middleware('auth')
       ->group(function(){
@@ -63,11 +63,11 @@ use App\Http\Controllers\{
           Route::post('cadastrar','store')->name('cliente.store');
           Route::post('atualizar/{id}','update')->name('cliente.update');
           Route::post('excluir/{id}','destroy')->name('cliente.destroy');
-      });    
+      });
     // ROUTE CADASTRAR PESSOA
 
     // ROUTE ADOÇÃO
-      
+
     // ROUTE ADOÇÃO
 
-      
+
