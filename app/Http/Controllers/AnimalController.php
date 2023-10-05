@@ -17,7 +17,7 @@ class AnimalController extends Controller
      */
     public function index()
     {
-       $animal = Animal::orderBy('id_animal')->paginate(15);
+        $animal = Animal::orderBy('id_animal')->paginate(15);
        return view('cadastro.indexCadastro')->with(compact('animal'));
     }
 
@@ -26,24 +26,29 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        $naimalCreate = null;
+        $animalCreate = null;
         return view('cadastro.cadastroPet')->with(compact('animal'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        Animal::create($request->all());
+        return redirect()
+            ->route('cadastro.cadastroPet')
+            ->with('novo', 'Pet cadastrado com sucesso!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(int $id)
     {
-        //
+        $animal = Animal::with([
+
+            ])->find($id);
     }
 
     /**
