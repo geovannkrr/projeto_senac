@@ -27,7 +27,7 @@ class AnimalController extends Controller
         $animal = null;
         return view('cadastro.cadastroPet')->with(compact('animal'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
@@ -44,7 +44,9 @@ class AnimalController extends Controller
      */
     public function show(int $id)
     {
-        
+        $animal = Animal::with([
+
+        ])->find($id);
     }
 
     /**
