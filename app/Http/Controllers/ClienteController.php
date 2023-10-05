@@ -38,7 +38,7 @@ class ClienteController extends Controller
     {
         Cliente::create($request->all());
         return redirect()
-            ->route('cliente.store')
+            ->route('cadastro.cadastroPessoa')
             ->with('novo', 'Cliente cadastro com sucesso!');
     }
 
