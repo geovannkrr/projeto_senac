@@ -168,28 +168,8 @@ use App\Http\Controllers\{
         });
             //ROUTE EXCLUIR-PESSOA
 
+    // ROUTE ADOÇÃO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // ROUTE ADOÇÃO
 
 
