@@ -12,7 +12,8 @@ class HistoricoAdocaoController extends Controller
      */
     public function index()
     {
-        //
+        $historicoadocao = historico_adocao::orderBy('id_historico_adocao')->paginate(10);
+       return view('cadastro.indexCadastro')->with(compact('historico_adocao'));
     }
 
     /**
@@ -20,7 +21,8 @@ class HistoricoAdocaoController extends Controller
      */
     public function create()
     {
-        //
+        $historicoadocaoCreate = null;
+        return view('adocao.indexAdocao')->with(compact('historico_adocao'));
     }
 
     /**
@@ -28,38 +30,52 @@ class HistoricoAdocaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        historico_adocao::create($request->all());
+        return redirect()
+            ->route('adocao.indexAdocao')
+            ->with('novo', 'Adoção cadastrada com sucesso!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(historico_adocao $historico_adocao)
+    public function show(int $id)
     {
-        //
+        $historicoadocao = historico_adocao::with([
+
+            ])->find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(historico_adocao $historico_adocao)
+    public function edit(int $id)
     {
-        //
+        $historicoadocao = historico_adocao::find($id);
+        return view('adocao.indexAdocao')
+            ->with(compact('historico_adocao'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, historico_adocao $historico_adocao)
+    public function update(Request $request, int $id)
     {
-        //
+        $historicoadocao = historico_adocao::find($id);
+        $historicoadocao->update($request->all());
+        return redirect()
+            ->route('adocao.indexAdocao')
+            ->with('atualizado', 'Atualizado com sucesso!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(historico_adocao $historico_adocao)
+    public function destroy(int $id)
     {
-        //
+        historico_adocao::find($id)->delete();
+        return redirect()
+            ->back()
+            ->with('excluido', 'Excluído com sucesso!');
     }
 }

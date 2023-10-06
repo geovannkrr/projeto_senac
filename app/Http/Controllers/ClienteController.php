@@ -6,6 +6,7 @@ use App\Models\{
     Cliente,
     Animal,
     Adocao,
+    historico_cliente
 
 };
 use Illuminate\Http\Request;
@@ -49,7 +50,9 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::with([
             'adocao',
-            'adocao.animal',
+            'adocao.cliente',
+            'historico_cliente',
+            'historico_cliente.cliente'
           ])->find($id);
 
         return view('visualizar.visualizarPessoa')

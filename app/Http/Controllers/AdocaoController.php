@@ -6,6 +6,7 @@ use App\Models\{
     Adocao,
     Animal,
     Cliente,
+    historico_adocao
 };
 use Illuminate\Http\Request;
 
@@ -48,7 +49,9 @@ class AdocaoController extends Controller
     {
         $adocao = Adocao::with([
             'cliente',
-            'cliente.animal',
+            'cliente.adocao',
+            'historico_adocao',
+            'historico_adocao.adocao'
           ])->find($id);
 
         return view('adocao.indexAdocao')
