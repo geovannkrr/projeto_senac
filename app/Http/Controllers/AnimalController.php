@@ -46,8 +46,15 @@ class AnimalController extends Controller
     public function show(int $id)
     {
         $animal = Animal::with([
+            'adocao',
+            'adocao.animal',
+            'historico_animal',
+            'historico_animal.animal'
 
-            ])->find($id);
+          ])->find($id);
+
+        return view('visualizar.visualizarPet')
+            ->with(compact('animal'));
     }
 
     /**
