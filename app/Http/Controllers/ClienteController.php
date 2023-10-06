@@ -6,7 +6,7 @@ use App\Models\{
     Cliente,
     Animal,
     Adocao,
-    historico_cliente
+    historico_cliente,
 
 };
 use Illuminate\Http\Request;
