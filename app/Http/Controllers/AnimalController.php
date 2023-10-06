@@ -6,6 +6,7 @@ use App\Models\{
     Animal,
     cliente,
     Adocao,
+    historico_animal
 };
 use Illuminate\Http\Request;
 class AnimalController extends Controller
@@ -44,7 +45,9 @@ class AnimalController extends Controller
      */
     public function show(int $id)
     {
-        //
+        $animal = Animal::with([
+
+            ])->find($id);
     }
 
     /**
