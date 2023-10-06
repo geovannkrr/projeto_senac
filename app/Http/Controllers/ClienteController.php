@@ -77,7 +77,7 @@ class ClienteController extends Controller
         $cliente = Cliente::find($id);
         $cliente->update($request->all());
         return redirect()
-            ->route('cliente.update')
+            ->route('cadastro.indexCadastro')
             ->with('atualizado', 'Atualizado com sucesso!');
     }
 
