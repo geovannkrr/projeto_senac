@@ -12,14 +12,10 @@ use App\Http\Controllers\{
 
     // ROUTE TELA INICIAL
         Route::get('/', function () {
-            return redirect()->route('TelaInicial');
+            return redirect()->route('telainicial');
         })->middleware(['auth', 'verified'])
             ->name('home');
 
-        Route::get('/TelaInicial', function () {
-            return redirect()->route('TelaInicial');
-            })->middleware(['auth', 'verified'])
-              ->name('home');
     // ROUTE TELA INICIAL
 
     // ROUTE TELA CADASTRO
@@ -108,19 +104,7 @@ use App\Http\Controllers\{
             //ROUTE EXCLUIR-PESSOA
 
     // ROUTE ADOÇÃO
-    Route::prefix('adocao')
-    ->controller(AdocaoController::class)
-    ->middleware('auth')
-    ->group(function(){
 
-        Route::get('/novo', 'cadastro-adoção')->name('adocao.indexAdocao');
-        Route::get('/editar/{id}', 'editar-adocão')->name('adocao.indexAdocao');
-        Route::get('exibir/{id}','exibir-adoção')->name('adocao.indexAdocao');
-
-        Route::post('cadastrar','store')->name('adocao.indexAdocao');
-        Route::post('atualizar/{id}','update')->name('adocao.indexAdocao');
-        Route::post('excluir/{id}','destroy')->name('adocao.indexAdocao');
-       });
     // ROUTE ADOÇÃO
 
 
