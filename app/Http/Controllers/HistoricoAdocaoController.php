@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\historico_adocao;
+
 use Illuminate\Http\Request;
 
 class HistoricoAdocaoController extends Controller
@@ -12,7 +13,8 @@ class HistoricoAdocaoController extends Controller
      */
     public function index()
     {
-        //
+        $historico_adocao = Historico_Adocao::orderBy('id_historico_adocao')->paginate(15);
+        return view('cadastro.indexCadastro')->with(compact('historico_adocao'));
     }
 
     /**
@@ -20,7 +22,9 @@ class HistoricoAdocaoController extends Controller
      */
     public function create()
     {
-        //
+        $historico_adocao_create = null;
+        return view('historico_adocao.index')
+            ->with(compact('historico_adocao'));
     }
 
     /**
@@ -34,7 +38,7 @@ class HistoricoAdocaoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(historico_adocao $historico_adocao)
+    public function show(Request $request, int $id)
     {
         //
     }
@@ -42,7 +46,7 @@ class HistoricoAdocaoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(historico_adocao $historico_adocao)
+    public function edit(Request $request, int $id)
     {
         //
     }
@@ -50,7 +54,7 @@ class HistoricoAdocaoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, historico_adocao $historico_adocao)
+    public function update(Request $request, int $id)
     {
         //
     }
@@ -58,7 +62,7 @@ class HistoricoAdocaoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(historico_adocao $historico_adocao)
+    public function destroy(Request $request, int $id)
     {
         //
     }
