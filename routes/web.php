@@ -12,14 +12,10 @@ use App\Http\Controllers\{
 
     // ROUTE TELA INICIAL
         Route::get('/', function () {
-            return redirect()->route('TelaInicial');
+            return redirect()->route('telainicial');
         })->middleware(['auth', 'verified'])
             ->name('home');
 
-        Route::get('/TelaInicial', function () {
-            return redirect()->route('TelaInicial');
-            })->middleware(['auth', 'verified'])
-              ->name('home');
     // ROUTE TELA INICIAL
 
     // ROUTE TELA CADASTRO
@@ -169,7 +165,7 @@ use App\Http\Controllers\{
             //ROUTE EXCLUIR-PESSOA
 
     // ROUTE ADOÇÃO
-           
+
     // ROUTE ADOÇÃO
 
 
